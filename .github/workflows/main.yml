@@ -20,12 +20,16 @@ jobs:
           --health-timeout 5s
           --health-retries 5
     steps:
+      - name: Checkout git repo
+        uses: actions/checkout@v3
+        
       - name: Install PostgreSQL client
         run: |
           apt-get update
           apt-get install --yes postgresql-client
+          
       - name: Query database
-        run: psql -h database-2.cnueudck5tkx.us-east-1.rds.amazonaws.com -d core -U postgres -p 5432 -f postgres.sql
+        run: psql -h database-1.cnueudck5tkx.us-east-1.rds.amazonaws.com -d core -U postgres -p 5432 -f postgres.sql
       
       
         env:
