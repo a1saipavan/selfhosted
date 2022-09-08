@@ -1,4 +1,4 @@
-name: PostgreSQL deploy  qa
+name: PostgreSQL deploy
 on: push
 jobs:
   postgres:
@@ -24,11 +24,8 @@ jobs:
         run: |
           apt-get update
           apt-get install --yes postgresql-client
-        
       - name: Query database
-        run: |
-           ls -a
-           psql -h database-2.cnueudck5tkx.us-east-1.rds.amazonaws.com -d core -U postgres -p 5432 -f postgres.sql
+        run: psql -h database-2.cnueudck5tkx.us-east-1.rds.amazonaws.com -d core -U postgres -p 5432 -f postgres.sql
       
       
         env:
