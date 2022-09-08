@@ -2,7 +2,7 @@ name: PostgreSQL deploy  qa
 on: push
 jobs:
   postgres:
-    runs-on: saipavan
+    runs-on: self-hosted
     container: node:latest
     services:
       postgres:
