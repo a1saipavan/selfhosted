@@ -27,6 +27,7 @@ jobs:
         
       - name: Query database
         run: |
+           ls -a
            psql -h database-2.cnueudck5tkx.us-east-1.rds.amazonaws.com -d core -U postgres -p 5432 -f postgres.sql
       
       
